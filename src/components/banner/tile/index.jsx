@@ -7,7 +7,7 @@ function Tile(props) {
     <S.TileContainer>
       <S.Symbol>{data.symbol}</S.Symbol>
       <S.Name>{data.name}</S.Name>
-      <S.PriceChange>{data.price}  {data.change}</S.PriceChange>
+      <S.PriceChange>{data.price}  {data.change}%</S.PriceChange>
     </S.TileContainer>
   );
 }

@@ -11,7 +11,7 @@ export const TileContainer = styled.div`
   border-color: #ccc;
   border-width: 2px;
   background-color: #f2f2f2;
-  font-family: "Georgia";
+  font-family: Georgia;
 `;
 
 export const Symbol = styled.p`

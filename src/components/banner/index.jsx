@@ -1,82 +1,22 @@
 import React, { useState, useEffect } from 'react';
-import Marquee, { Motion, randomIntFromInterval } from "react-marquee-slider";
+import Marquee from "react-marquee-slider";
 import {Tile} from "./tile";
-
-const data = [
-    {
-        symbol: 'AAPL',
-        name: 'Apple, Inc.',
-        price: 149.26,
-        change: 0.34, // percent
-    },
-    {
-        symbol: 'AAPL',
-        name: 'Apple, Inc.',
-        price: 149.26,
-        change: 0.34, // percent
-    },    
-    {
-        symbol: 'AAPL',
-        name: 'Apple, Inc.',
-        price: 149.26,
-        change: 0.34, // percent
-    },    
-    {
-        symbol: 'AAPL',
-        name: 'Apple, Inc.',
-        price: 149.26,
-        change: 0.34, // percent
-    },    
-    {
-        symbol: 'AAPL',
-        name: 'Apple, Inc.',
-        price: 149.26,
-        change: 0.34, // percent
-    },    
-    {
-        symbol: 'AAPL',
-        name: 'Apple, Inc.',
-        price: 149.26,
-        change: 0.34, // percent
-    },    
-    {
-        symbol: 'AAPL',
-        name: 'Apple, Inc.',
-        price: 149.26,
-        change: 0.34, // percent
-    },    
-    {
-        symbol: 'AAPL',
-        name: 'Apple, Inc.',
-        price: 149.26,
-        change: 0.34, // percent
-    },    
-    {
-        symbol: 'AAPL',
-        name: 'Apple, Inc.',
-        price: 149.26,
-        change: 0.34, // percent
-    },    
-    {
-        symbol: 'AAPL',
-        name: 'Apple, Inc.',
-        price: 149.26,
-        change: 0.34, // percent
-    },    
-    {
-        symbol: 'AAPL',
-        name: 'Apple, Inc.',
-        price: 149.26,
-        change: 0.34, // percent
-    },
-]
+import { getTileData } from './utils';
 
 function Banner() {
+    const [tileData, setTileData] = useState([]);
+
+    useEffect(() => {
+        getTileData().then((data) => {
+            setTileData(data);
+        });
+    },[]);
+
   return (
     <div>
         <Marquee velocity={12}>
-            {data.map((tile) => (
-                <Tile data={tile}/>
+            {tileData.map((tile, idx) => (
+                <Tile data={tile} key={idx}/>
             ))}
         </Marquee>
     </div>  
@@ -84,3 +24,4 @@ function Banner() {
 }
 
 export default Banner;
+
