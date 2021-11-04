@@ -1,9 +1,2 @@
-FROM node:latest
-
-WORKDIR /app
-
-COPY . .
-
-RUN npm install
-
-CMD ["npm", "start"]
+FROM nginx:1.19.0
+COPY build/ /usr/share/nginx/html

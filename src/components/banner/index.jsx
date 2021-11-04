@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import Marquee from "react-marquee-slider";
 import {Tile} from "./tile";
-import { getTileData } from './utils';
+import { getTileData } from "./utils";
 
 function Banner() {
     const [tileData, setTileData] = useState([]);
