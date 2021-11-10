@@ -14,7 +14,7 @@ function Banner() {
 
   return (
     <div>
-        <Marquee velocity={12}>
+        <Marquee velocity={10}>
             {tileData.map((tile, idx) => (
                 <Tile data={tile} key={idx}/>
             ))}
