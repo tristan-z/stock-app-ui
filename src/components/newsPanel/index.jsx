@@ -4,12 +4,14 @@ import { getNewsData } from "./utils";
 
 function NewsPanel() {
     const [newsData, setNewsData] = useState([]);
+    const limit = 2;
+    const [index, setIndex] = useState(0);
 
     useEffect(() => {
-        getNewsData().then((news) => {
+        getNewsData(limit, index).then((news) => {
             setNewsData(news);
         });
-    },[]);
+    },[index]);
 
   return (
     <div>
