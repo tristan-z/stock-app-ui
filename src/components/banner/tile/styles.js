@@ -3,8 +3,6 @@ import styled from "styled-components";
 export const TileContainer = styled.div`
   display: flex;
   flex-direction: column;
-  line-height: 5px;
-  height: 45px;
   font-size: 1.2rem;
   padding: 10px;
   border-style: solid;

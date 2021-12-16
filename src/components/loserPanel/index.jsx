@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import {Loser} from "./loser";
 import { getLoserData } from "./utils";
 
+
 function LoserPanel() {
     const [loserData, setLoserData] = useState([]);
 

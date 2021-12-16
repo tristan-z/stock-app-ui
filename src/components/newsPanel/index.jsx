@@ -1,17 +1,32 @@
 import React, { useState, useEffect } from 'react';
 import {News} from "./news";
 import { getNewsData } from "./utils";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowLeft, faArrowRight, faCoffee } from '@fortawesome/free-solid-svg-icons'
+
 
 function NewsPanel() {
     const [newsData, setNewsData] = useState([]);
+    const [total, setTotal] = useState(0);
     const limit = 2;
     const [index, setIndex] = useState(0);
 
     useEffect(() => {
-        getNewsData(limit, index).then((news) => {
-            setNewsData(news);
+        getNewsData(limit, index).then((response) => {
+            setNewsData(response.message);
+            setTotal(response.total);
         });
     },[index]);
+
+    function incrementIndex(){
+        setIndex(index + limit);
+        console.log(index, total);
+        console.log(index >= (total-limit));
+    }
+
+    function decrementIndex(){
+        setIndex(index - limit);
+    }
 
   return (
     <div>
@@ -19,6 +34,12 @@ function NewsPanel() {
             {newsData.map((news, idx) => (
                 <News data={news} key={idx}/>
             ))}
+            <button onClick={decrementIndex} disabled={index === 0} >
+                <FontAwesomeIcon icon={faArrowLeft} />
+            </button>
+            <button onClick={incrementIndex} disabled={index >= (total - limit)}>
+                <FontAwesomeIcon icon={faArrowRight} />
+            </button>
         </div>
     </div>  
   );

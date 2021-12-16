@@ -11,5 +11,5 @@ function News(props) {
         </S.NewsContainer>
     );
   }
-  
+
   export { News };

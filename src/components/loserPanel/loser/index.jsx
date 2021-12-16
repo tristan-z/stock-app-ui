@@ -1,5 +1,6 @@
 import React from "react";
-import * as S from "./styles"
+import * as S from "./styles";
+import { StyledNumber } from "../../common/styled-number/StyledNumber";
 
 function Loser(props) {
   const data = props.data;
@@ -7,7 +8,8 @@ function Loser(props) {
     <S.LoserContainer>
       {data.symbol}
       {data.name}
-      {data.price} 
+      <StyledNumber value={data.price} prefix="$" />
+      <StyledNumber value={data.change} postfix="%" showSign showColor />
     </S.LoserContainer>
   );
 }
