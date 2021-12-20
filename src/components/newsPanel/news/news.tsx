@@ -1,7 +1,12 @@
 import React from "react";
-import * as S from "./styles"
+import * as S from "./styles";
+import { GetNewsResponse } from "../../../services/news/types"
 
-function News(props) {
+type NewsProps = {
+    data: GetNewsResponse
+}
+
+function News(props: NewsProps) {
     const data = props.data;
     return (
         <S.NewsContainer>

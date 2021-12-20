@@ -1,8 +1,13 @@
 import React from "react";
 import * as S from "./styles";
 import { StyledNumber } from "../../common/styled-number/StyledNumber";
+import { GetGainerResponse } from "../../../services/gainer/types"
 
-function Gainer(props) {
+type GainerProps = {
+  data: GetGainerResponse
+}
+
+function Gainer(props: GainerProps) {
   const data = props.data;
   return (
     <S.GainerContainer>

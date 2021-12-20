@@ -1,8 +1,14 @@
 import React from "react";
 import * as S from "./styles";
 import { StyledNumber } from "../../common/styled-number/StyledNumber";
+import { DaySummaryResponse } from "../../../services/summary/types"
 
-function Tile(props) {
+
+type TileProps = {
+  data: DaySummaryResponse
+}
+
+function Tile(props: TileProps) {
   const data = props.data;
   return (
     <S.TileContainer>

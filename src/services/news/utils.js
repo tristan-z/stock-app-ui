@@ -1,4 +1,5 @@
 import { apiUrl } from "../../config";
+import { GetNewsResponse } from "./types";
 
 export async function getNewsData(limit, index) {
   const params = new URLSearchParams({ limit, index }).toString();
