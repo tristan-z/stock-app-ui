@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 function NewsPanel() {
-  const [newsData, setNewsData] = useState([]);
+  const [newsData, setNewsData] = useState<GetNewsResponse[]>([]);
   const [total, setTotal] = useState(0);
   const limit = 2;
   const [index, setIndex] = useState(0);
